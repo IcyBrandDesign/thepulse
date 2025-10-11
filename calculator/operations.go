@@ -13,6 +13,7 @@ func IntDivider(nevner int, teller int) int {
 	return divideQuotient
 }
 
+// TODO
 func Abc(a float32, b float32, c float32) float32 {
-	
+	return 0
 }

@@ -1,6 +1,10 @@
 {{ define "content" }}
-<h1>{{ .bmi }}</h1>
-<p>Velkommen til helse-siden!</p>
+
+<h1>Velkommen til helse-siden!</h1>
+<ul>
+    <li><a href="#" id="openBMICalc">{{ .bmi }}</a></li>
+</ul>
 <a href="/">Tilbake til forsiden</a>
+
 {{ end }}
 {{ template "base" . }}
