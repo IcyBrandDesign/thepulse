@@ -9,6 +9,7 @@ import (
 func RegisterRoutes(router *gin.Engine) {
 
 	router.GET("/", controllers.IndexPage)
+	router.GET("/health", controllers.HealthPage)
 
 	api := router.Group("/api")
 	{
