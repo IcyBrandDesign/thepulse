@@ -8,7 +8,7 @@ import (
 
 func IndexPage(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", gin.H{
-		"title":   "My house",
+		"title":   "The Pulse",
 		"message": "Welcome to Jens' House",
 	})
 }

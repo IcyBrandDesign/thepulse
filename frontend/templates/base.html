@@ -8,8 +8,18 @@
         <link rel="stylesheet" href="/static/style.css">
         <script src="/static/script.js" defer></script>
     </head>
+    
     <body>
+        <header id="header">
+            <h1 id="mainName"> {{ .title }} </h1>
+        </header>
+        
         {{ block "content" . }}{{ end }}
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <footer>
+            fsdome
+        </footer>
     </body>
 </html>
 {{ end }}
