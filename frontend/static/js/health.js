@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button id="calcBMIButton" type="submit">Calculate BMI</button>
                 </form>
                 <p id="resultBMI">RESULTAT HER</p>
-                <a href="#" id="toHealth">Close BMI calculator</a>
+                <a href="#" id="closeBMI">Close BMI calculator</a>
                 `;
             const calcButton = document.getElementById("BMIform");
             calcButton.addEventListener("submit", (event) => {
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     target="_blank">
                     NHI- Kostråd ved forhøyet kolesterolnivå i blodet
                 </a><br>
-                <a href="#" id="toHealth">Close Kolesterol data</a>
+                <a href="#" id="closeKolesterol">Close Kolesterol data</a>
             `;
         })
     }
@@ -59,8 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Lukker SPA - tilbake til health
 document.addEventListener("click", (event) => {
-    if (event.target.id == "toHealth") {
+    if (event.target.id == "closeBMI") {
         event.preventDefault();
-        window.location.reload()
+        document.getElementById("BMIcalc").innerHTML = ""
+    }
+    if (event.target.id == "closeKolesterol") {
+        event.preventDefault();
+        document.getElementById("healtKolesterol").innerHTML = ""
     }
 })
