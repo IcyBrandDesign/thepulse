@@ -6,7 +6,8 @@
         <title>{{ .title }}</title>
         <link rel="icon" href="/static/images/sopp.webp" type="image/x-icon">
         <link rel="stylesheet" href="/static/style.css">
-        <script src="/static/script.js" defer></script>
+        <script src="/static/js/main.js" defer></script>
+        {{ block "script" . }}{{ end }}
     </head>
     
     <body>
