@@ -1,6 +1,18 @@
+{{ define "script"}}
+<link rel="stylesheet" href="/static/css/index.css">
+{{ end }}
+
 {{ define "content" }}
   <h1 id="fromIndexControl.go"> {{ .message }} </h1>
   <h2 id="message"></h2>
-  <a href="/health">Gå til Health-siden</a>
+  <a href="/health">Gå til Health-siden</a><br>
+  TODO: Fikse iframe til AJAX eller dynamisk DOM <br>
+  <iframe
+    id="iframeYr"
+    src="{{ .iframeURL }}"
+    referrerpolicy="no-referrer"
+    loading="lazy"
+    >
+  </iframe>
 {{ end }}
 {{ template "base" . }}
