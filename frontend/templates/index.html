@@ -1,18 +1,15 @@
 {{ define "script"}}
 <link rel="stylesheet" href="/static/css/index.css">
+<script src="/static/js/index.js" defer></script>
 {{ end }}
 
 {{ define "content" }}
   <h1 id="fromIndexControl.go"> {{ .message }} </h1>
   <h2 id="message"></h2>
+  <button id="iframeYrButton" data-iframe-url="{{ .iframeURL }}">Dagens vær</button><br>
+  <!-- <a href="#" id="iframeYrButton">Dagens vær</a> -->
   <a href="/health">Gå til Health-siden</a><br>
   TODO: Fikse iframe til AJAX eller dynamisk DOM <br>
-  <iframe
-    id="iframeYr"
-    src="{{ .iframeURL }}"
-    referrerpolicy="no-referrer"
-    loading="lazy"
-    >
-  </iframe>
+  <p id="iframeYr"></p><br>
 {{ end }}
 {{ template "base" . }}
