@@ -9,7 +9,7 @@ import (
 func RegisterRoutes(router *gin.Engine) {
 
 	router.Use(func(c *gin.Context) {
-		c.Header("Content-Security-Policy", "default-src 'self'; frame-src https://www.yr.no;")
+		c.Header("Content-Security-Policy", "default-src 'self'; frame-src https://www.yr.no https://www.youtube.com https://www.youtube-nocookie.com https://thepulse.onrender.com/;")
 		c.Header("X-Content-Type-Options", "nosniff")
 		c.Header("X-Frame-Options", "SAMEORIGIN")
 		c.Header("Referrer-Policy", "no-referrer")

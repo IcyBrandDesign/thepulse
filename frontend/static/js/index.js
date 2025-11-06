@@ -1,3 +1,4 @@
+// Dette er iframe vær
 document.addEventListener("DOMContentLoaded", ( )=> {
     const yrButton = document.getElementById("iframeYrButton");
     const yrContainer = document.getElementById("iframeYr");
