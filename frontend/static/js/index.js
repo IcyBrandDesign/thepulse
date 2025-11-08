@@ -1,86 +1,25 @@
 import { closeDynamicDOM } from "./utils.js";
-
-// Dette er iframe vær
-function dagensVaer(yrButton, iframeURL, yrContainer) {
-    // Klikk mottaker
-    if ( !yrButton || !yrContainer ) {
-        console.warn("Fant ikke nødvendige DOM-elementer (iframeYrButton / iframeYr).");
-        return;
-    }
-    if (!iframeURL) {
-        console.log("Ikke iframeURL mottatt")
-    }
-    console.log("iframeURL: ", iframeURL)
-
-    yrContainer.dataset.buttonId = yrButton.id;
-
-    yrButton.addEventListener("click", (event) => {
-        event.preventDefault(); // Hindrer standar oppførsel til .html og setter js til å bestemme
-        const iframe = document.createElement("iframe");
-        iframe.id = "yrContent";
-        iframe.src = iframeURL;
-        iframe.referrerPolicy = "no-referrer"; // Ikke sende med info om hvor iframe hentes
-        iframe.loading = "lazy"; // vente med å laste til objektet er i synsfeltet
-
-        // tømme innhold og sette inn iframe
-        yrContainer.appendChild(iframe);
-        yrButton.style.display = "none";
-
-        //  Lukker av Dynamisk DOM
-        const closeButton = document.createElement("button");
-        closeButton.className = "closeDynamicDOM";
-        closeButton.innerText = "Lukk dagens vær"
-        yrContainer.appendChild(closeButton)
-    })
-}
-
-function ukensVaer(button, htmlURL, container) {
-    if ( !button || !container ) {
-        console.warn("Fant ikke nødvendige DOM-elementer (iframeYrButton / iframeYr).");
-        return;
-    }
-    if (!htmlURL) {
-        console.log("Ikke iframeURL mottatt")
-    }
-    console.log("iframeURL: ", htmlURL)
-
-    container.dataset.buttonId = button.id;
-
-    button.addEventListener("click", (event) => {
-        event.preventDefault(); // Hindrer standar oppførsel til .html og setter js til å bestemme
-        const iframe = document.createElement("iframe");
-        iframe.id = "ukensVaerContent";
-        iframe.src = htmlURL;
-        iframe.referrerPolicy = "no-referrer"; // Ikke sende med info om hvor iframe hentes
-        iframe.loading = "lazy"; // vente med å laste til objektet er i synsfeltet
-
-        // tømme innhold og sette inn iframe
-        container.appendChild(iframe);
-        button.style.display = "none";
-
-        //  Lukker av Dynamisk DOM
-        const closeButton = document.createElement("button");
-        closeButton.className = "closeDynamicDOM";
-        closeButton.innerText = "Lukk ukens vær"
-        container.appendChild(closeButton)
-    })
-}
+import { iframeParser } from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", ( )=> {
     // Dagens vær iframe
     const yrButton = document.getElementById("iframeYrButton");
     const yrContainer = document.getElementById("iframeYr");
     const iframeURL = yrButton.dataset.iframeUrl;
+    const iframeIdStringDagensVaer = "yrContent";
+    const closeButtonClassNameStringDagensVaer = "closeDynamicDOM";
     // Ukens vær iframe
     const buttonUkensVaerYr = document.getElementById("buttonUkensVaerYr");
     const contentUkensVaerYr = document.getElementById("contentUkensVaerYr");
     const ukensVaerULR = buttonUkensVaerYr.dataset.iframeUrl;
+    const iframeIdStringUkensVaer = "ukensVaerContent";
+    const closeButtonClassNameStringUkensVaer = "closeDynamicDOM";
 
     if (yrButton) {
-        dagensVaer(yrButton, iframeURL, yrContainer);
+        iframeParser(yrButton, iframeURL, yrContainer, iframeIdStringDagensVaer, closeButtonClassNameStringDagensVaer);
     }
     if (buttonUkensVaerYr) {
-        ukensVaer(buttonUkensVaerYr, ukensVaerULR, contentUkensVaerYr);
+        iframeParser(buttonUkensVaerYr, ukensVaerULR, contentUkensVaerYr, iframeIdStringUkensVaer, closeButtonClassNameStringUkensVaer);
     }
 })
 
@@ -101,21 +40,3 @@ document.addEventListener("click", (event) => {
         }
     }
 })
-
-// document.addEventListener("click", (event) => {
-//     if (event.target.classList.contains("closeDynamicDOM")) {
-//         event.preventDefault();
-//         // Lukker for dangens vær
-//         const dagensVaer = document.getElementById("iframeYr");
-//         const yrButton = document.getElementById("iframeYrButton");
-//         closeDynamicDOM(dagensVaer, yrButton)
-
-//         // lukker av ukensVaer
-//         const ukensVaer = document.getElementById("contentUkensVaerYr");
-//         const ukensVaerButton = document.getElementById("buttonUkensVaerYr");
-//         closeDynamicDOM(ukensVaer, ukensVaerButton)
-//         // Når iframe lukkes, vises knappen til å åpne iframe igjen
-       
-        
-//     }
-// })
