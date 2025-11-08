@@ -12,6 +12,8 @@ function dagensVaer(yrButton, iframeURL, yrContainer) {
     }
     console.log("iframeURL: ", iframeURL)
 
+    yrContainer.dataset.buttonId = yrButton.id;
+
     yrButton.addEventListener("click", (event) => {
         event.preventDefault(); // Hindrer standar oppførsel til .html og setter js til å bestemme
         const iframe = document.createElement("iframe");
@@ -27,7 +29,7 @@ function dagensVaer(yrButton, iframeURL, yrContainer) {
         //  Lukker av Dynamisk DOM
         const closeButton = document.createElement("button");
         closeButton.className = "closeDynamicDOM";
-        closeButton.innerText = "Lukk været"
+        closeButton.innerText = "Lukk dagens vær"
         yrContainer.appendChild(closeButton)
     })
 }
@@ -41,6 +43,8 @@ function ukensVaer(button, htmlURL, container) {
         console.log("Ikke iframeURL mottatt")
     }
     console.log("iframeURL: ", htmlURL)
+
+    container.dataset.buttonId = button.id;
 
     button.addEventListener("click", (event) => {
         event.preventDefault(); // Hindrer standar oppførsel til .html og setter js til å bestemme
@@ -57,7 +61,7 @@ function ukensVaer(button, htmlURL, container) {
         //  Lukker av Dynamisk DOM
         const closeButton = document.createElement("button");
         closeButton.className = "closeDynamicDOM";
-        closeButton.innerText = "Lukk været"
+        closeButton.innerText = "Lukk ukens vær"
         container.appendChild(closeButton)
     })
 }
@@ -83,17 +87,35 @@ document.addEventListener("DOMContentLoaded", ( )=> {
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("closeDynamicDOM")) {
         event.preventDefault();
-        // Lukker for dangens vær
-        const dagensVaer = document.getElementById("iframeYr");
-        const yrButton = document.getElementById("iframeYrButton");
-        closeDynamicDOM(dagensVaer, yrButton)
-
-        // lukker av ukensVaer
-        const ukensVaer = document.getElementById("contentUkensVaerYr");
-        const ukensVaerButton = document.getElementById("buttonUkensVaerYr");
-        closeDynamicDOM(ukensVaer, ukensVaerButton)
-        // Når iframe lukkes, vises knappen til å åpne iframe igjen
-       
         
+        const closeButton = event.target;
+
+        const container = closeButton.parentElement;
+        
+        const iframe = container.querySelector("iframe");
+
+        const openButton = document.getElementById(container.dataset.buttonId);
+
+        if (iframe && openButton) {
+            closeDynamicDOM(container, openButton)
+        }
     }
 })
+
+// document.addEventListener("click", (event) => {
+//     if (event.target.classList.contains("closeDynamicDOM")) {
+//         event.preventDefault();
+//         // Lukker for dangens vær
+//         const dagensVaer = document.getElementById("iframeYr");
+//         const yrButton = document.getElementById("iframeYrButton");
+//         closeDynamicDOM(dagensVaer, yrButton)
+
+//         // lukker av ukensVaer
+//         const ukensVaer = document.getElementById("contentUkensVaerYr");
+//         const ukensVaerButton = document.getElementById("buttonUkensVaerYr");
+//         closeDynamicDOM(ukensVaer, ukensVaerButton)
+//         // Når iframe lukkes, vises knappen til å åpne iframe igjen
+       
+        
+//     }
+// })
