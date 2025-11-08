@@ -1,13 +1,13 @@
 {{ define "script"}}
 <link rel="stylesheet" href="/static/css/index.css">
-<script src="/static/js/index.js" defer></script>
+<script type="module" src="/static/js/index.js" defer></script>
 {{ end }}
 
 {{ define "content" }}
   <h1 id="fromIndexControl.go"> {{ .message }} </h1>
   <h2 id="message"></h2>
-  <button id="iframeYrButton" data-iframe-url="{{ .iframeURL }}">Dagens vær</button><br>
-  <!-- <a href="#" id="iframeYrButton">Dagens vær</a> -->
+  <button id="iframeYrButton" data-iframe-url="{{ .iframeURLdagensVaer }}">Dagens vær</button><br>
+  <button id="buttonUkensVaerYr" data-iframe-url="{{ .ukensVaerURL }}">Ukens vær</button><br>
   <a href="/health">Gå til Health-siden</a><br>
   <!-- TODO:<br>
     Lage postgreSQL database<br>
@@ -27,6 +27,7 @@ Goroutines: Hent aksjekurser eller valutakurser parallelt fra flere API-er → v
 
 Dette viser virkelig nytten av concurrency: data kommer raskere tilbake, og interfacet gjør at du kan bruke samme logikk for aksjer, kryptovaluta eller bankkontoer. -->
   <p id="iframeYr"></p><br>
+  <p id="contentUkensVaerYr"></p>
   <iframe src="https://thepulse.onrender.com/" frameborder="0" width="560" height="315"></iframe>
 {{ end }}
 {{ template "base" . }}
