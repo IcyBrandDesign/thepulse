@@ -13,9 +13,12 @@
     <body>
         <header id="header">
             <h1 id="mainName"> {{ .title }} </h1>
+            <a id="headerHome" href="/">HOME</a>
         </header>
         
-        {{ block "content" . }}{{ end }}
+        <main>
+            {{ block "content" . }}{{ end }}
+        </main>
 
         <footer>
             fsdome
