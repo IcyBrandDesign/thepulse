@@ -7,11 +7,12 @@
 
 
 -- Opprett tabell for IP-logg
-CREATE TABLE IF NOT EXISTS ip_logs (
+CREATE TABLE IF NOT EXISTS visitor_ips (
     id serial PRIMARY KEY,                  -- Automatisk økende ID
     ip_address inet NOT NULL,               -- IP-adresse (IPv4/IPv6)
     user_agent text,                        -- Valgfritt: nettleser eller klientinfo
-    visited_at timestamptz NOT NULL DEFAULT NOW()  -- Tidspunkt, fylles automatisk
+    visited_at timestamptz NOT NULL DEFAULT NOW(),  -- Tidspunkt, fylles automatisk
+    api_path text
 );
 
 -- Eventuelt: legg til indeks på ip_address for raskere søk
