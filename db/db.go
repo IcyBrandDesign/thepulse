@@ -10,10 +10,11 @@ import (
 var DB *sql.DB
 
 // Connects to database
-func Connect() {
-	connStr := "host=localhost port=5432 user=postgres password=Brussin83#6sdhc dbname=thepulsedb sslmode=disable"
+func Connect(stringOfDB string) {
 	var err error
+	connStr := stringOfDB
 	DB, err = sql.Open("postgres", connStr)
+
 	if err != nil {
 		log.Fatal("Error opening database", err)
 	}
