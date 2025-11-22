@@ -1,4 +1,5 @@
 - Lag et script som lagrer gitt html siden i en gitt url som pdf
+- Lag /robot.txt
 - Fullfør logger funksjonen
 - Innlogging/registreing
 - Filopplasting, kun admin. Skal være go routine
