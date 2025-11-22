@@ -1,3 +1,22 @@
+- Lag et script som lagrer gitt html siden i en gitt url som pdf
+- Fullfør logger funksjonen
+- Innlogging/registreing
+- Filopplasting, kun admin. Skal være go routine
+- Ende-ende kryptert chat
+- Lag en aksjekurs sjekker, og som kalkulerer opp og nedgang relativt til til og lag statisktikk på det. Lag en falsk kjøp og salg motor som ser om du vinner penger i lengden.
+- Finansdashboard / Portefølje-app
+
+Structs: Account, Transaction, Stock.
+
+Interface: Reportable med metoden Summary() string.
+
+Goroutines: Hent aksjekurser eller valutakurser parallelt fra flere API-er → vis samlet resultat på dashboard.
+
+Dette viser virkelig nytten av concurrency: data kommer raskere tilbake, og interfacet gjør at du kan bruke samme logikk for aksjer, kryptovaluta eller bankkontoer
+
+---------------------------------------
+
+
 Her er noen konkrete ideer du kan bygge i **Go/Gin** som krever **memory-virtualisering**, **CPU-virtualisering** eller **avansert concurrency** — fra enkle konsepter til mer avanserte prosjekter:
 
 ---

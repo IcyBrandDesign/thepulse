@@ -9,23 +9,8 @@
   <button id="iframeYrButton" data-iframe-url="{{ .iframeURLdagensVaer }}">Dagens vær</button><br>
   <button id="buttonUkensVaerYr" data-iframe-url="{{ .ukensVaerURL }}">Ukens vær</button><br>
   <a href="/health">Gå til Health-siden</a><br>
-  <!-- TODO:<br>
-    Fullfør logger funksjonen
-    Lage postgreSQL database<br>
-    Innlogging/registreing <br>
-    Filopplasting, kun admin. Skal være go routine <br>
-    Noe som lagrer besøkendes IP <br>
-    Ende-ende kryptert chat <br>
-    Lag en aksjekurs sjekker, og som kalkulerer opp og nedgang relativt til til og lag statisktikk på det. Lag en falsk kjøp og salg motor som ser om du vinner penger i lengden. <br>
-    Finansdashboard / Portefølje-app
 
-Structs: Account, Transaction, Stock.
-
-Interface: Reportable med metoden Summary() string.
-
-Goroutines: Hent aksjekurser eller valutakurser parallelt fra flere API-er → vis samlet resultat på dashboard.
-
-Dette viser virkelig nytten av concurrency: data kommer raskere tilbake, og interfacet gjør at du kan bruke samme logikk for aksjer, kryptovaluta eller bankkontoer. -->
+    
   <p id="iframeYr"></p><br>
   <p id="contentUkensVaerYr"></p><br>
   <!-- <iframe src="https://thepulse.onrender.com/" frameborder="0" width="560" height="315"></iframe> -->
