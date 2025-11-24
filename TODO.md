@@ -1,3 +1,4 @@
+- En kaizen loggførings API 
 - Lag et script som lagrer gitt html siden i en gitt url som pdf
 - Lag /robot.txt
 - Fullfør logger funksjonen
