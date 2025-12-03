@@ -1,3 +1,4 @@
+- Laste opp bilde og komprimere det med huffman coding.
 - En kaizen loggførings API 
 - Lag et script som lagrer gitt html siden i en gitt url som pdf
 - Lag /robot.txt
