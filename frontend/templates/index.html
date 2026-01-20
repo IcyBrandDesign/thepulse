@@ -4,8 +4,13 @@
 {{ end }}
 
 {{ define "content" }}
-  <h1 id="fromIndexControl.go"> {{ .message }} </h1>
-  <h2 id="message"></h2>
+  
+  
+  <p>
+    <h3>DAT230 - Komuniksajonsteknologi 1:</h3> <br>
+    
+    <h3>DAT240 - Programvareutvikling:</h3> <br>
+  </p>
   <button id="iframeYrButton" data-iframe-url="{{ .iframeURLdagensVaer }}">Dagens vær</button><br>
   <button id="buttonUkensVaerYr" data-iframe-url="{{ .ukensVaerURL }}">Ukens vær</button><br>
   <a href="/health">Gå til Health-siden</a><br>
@@ -13,6 +18,9 @@
     
   <p id="iframeYr"></p><br>
   <p id="contentUkensVaerYr"></p><br>
+
+  <h1 id="fromIndexControl.go"> {{ .message }} </h1>
+  <h2 id="message"></h2>
   <!-- <iframe src="https://thepulse.onrender.com/" frameborder="0" width="560" height="315"></iframe> -->
 {{ end }}
 {{ template "base" . }}
