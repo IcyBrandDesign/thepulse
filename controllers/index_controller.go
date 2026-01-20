@@ -15,7 +15,7 @@ import (
 
 func IndexPage(c *gin.Context) {
 	iframeURLdagensVaer := "https://www.yr.no/nb/innhold/1-15183/card.html?mode=dark"
-	ukensVaerURL := "https://www.yr.no/nb/innhold/1-72837/table.html?mode=dark"
+	ukensVaerURL := "https://www.yr.no/nb/innhold/1-15183/table.html?mode=dark"
 
 	utils.RenderTemplate(c, "index.html", gin.H{
 		"title":               "The Pulse",
