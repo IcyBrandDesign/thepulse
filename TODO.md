@@ -1,3 +1,5 @@
+- Lag en docker med .Net C# som kjøres i websiden og bruker variabler som bruker setter inn i websiden. Go bakend tar imot variablene og prosesserer og sender inn i docker som tar seg av kalkulasjonene.
+
 - Laste opp bilde og komprimere det med huffman coding.
 - En kaizen loggførings API 
 - Lag et script som lagrer gitt html siden i en gitt url som pdf
