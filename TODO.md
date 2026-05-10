@@ -1,3 +1,4 @@
+- En Download av pomodoro programmet mitt
 - Lag en docker med .Net C# som kjøres i websiden og bruker variabler som bruker setter inn i websiden. Go bakend tar imot variablene og prosesserer og sender inn i docker som tar seg av kalkulasjonene.
 
 - Vise videoer og gi tilgang til at bruker kan slette seer historien sin fra databasen
