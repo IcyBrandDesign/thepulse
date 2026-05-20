@@ -55,7 +55,7 @@ Lag en slags mini-database eller cache som simulerer virtuell minnehåndtering.
 * API for insert/get gjennom Gin
 
 **Eksempel-endepunkter:**
-
+ 
 * `POST /page` – lagre data
 * `GET /page/:id` – hent data, trigge page-fault hvis ikke i RAM
 * `GET /stats` – se RAM vs. disk-hits
