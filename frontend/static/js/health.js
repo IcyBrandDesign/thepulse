@@ -17,6 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 </form>
                 <p id="resultBMI">RESULTAT HER</p>
                 <a href="#" id="closeBMI">Close BMI calculator</a>
+                <p>BMI for voksne 18-65 år:
+                    <ul>
+                        <li>Undervekt: BMI under 18,5</li>
+                        <li>Normalvekt: BMI 18,5–24,9</li>
+                        <li>Overvekt: BMI 25,0–29,9</li>
+                        <li>Fedme grad 1: BMI 30,0–34,9</li>
+                        <li>Fedme grad 2: BMI 35,0–39,9</li>
+                        <li>Fedme grad 3: BMI 40,0 eller høyere</li>
+                    </ul>
+                </p>
                 `;
             const calcButton = document.getElementById("BMIform");
             calcButton.addEventListener("submit", (event) => {

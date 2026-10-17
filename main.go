@@ -9,9 +9,9 @@ import (
 )
 
 func main() {
-	local := false
+	local := true
 	if local {
-		const localDB string = "host=localhost port=5432 user=postgres password=Brussin83#6sdhc dbname=thepulsedb sslmode=disable"
+		const localDB string = "postgresql://neondb_owner:npg_pqXOCUli7D2Z@ep-nameless-bread-aga4otwo-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
 		db.Connect(localDB)
 	} else {
 		// const neonDB string = ""
