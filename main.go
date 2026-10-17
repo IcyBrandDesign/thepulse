@@ -9,7 +9,8 @@ import (
 )
 
 func main() {
-	local := true
+	// local endres etter om det er lokal testing eller live
+	local := false
 	if local {
 		const localDB string = "postgresql://neondb_owner:npg_pqXOCUli7D2Z@ep-nameless-bread-aga4otwo-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
 		db.Connect(localDB)
