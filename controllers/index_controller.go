@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"gofun/utils"
+	"thepulse/utils"
 
 	"github.com/gin-gonic/gin"
 )

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <form id="BMIform">
                 <label for="weightBMI">Weight [kg]</label>
                 <input id="weightBMI" type="number" step="0.1" min="0.1" required><br>
-                <label for="heightBMI">Hight    [cm]</label>
+                <label for="heightBMI">Hight[cm]</label>
                 <input id="heightBMI" type="number" step="1" min="1" required><br>
                 <button id="calcBMIButton" type="submit">Calculate BMI</button>
                 </form>

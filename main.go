@@ -1,25 +1,24 @@
 package main
 
 import (
-	"gofun/db"
-	"gofun/routes"
+	"thepulse/db"
+	"thepulse/routes"
 	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
-	// local endres etter om det er lokal testing eller live
-	local := false
-	if local {
-		const localDB string = "postgresql://neondb_owner:npg_pqXOCUli7D2Z@ep-nameless-bread-aga4otwo-pooler.c-2.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
-		db.Connect(localDB)
-	} else {
-		// const neonDB string = ""
-		dbURL := os.Getenv("DATABASE_URL")
+	godotenv.Load()
 
-		db.Connect(dbURL)
+	dbURL := os.Getenv("DATABASE_URL")
+
+	if dbURL == "" {
+		panic("DATABASE_URL not in environment locally or on render.com")
 	}
+
+	db.Connect(dbURL)
 
 	router := gin.Default()
 

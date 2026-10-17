@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"fmt"
-	"gofun/db"
+	"thepulse/db"
 	"log"
 
 	"github.com/gin-gonic/gin"

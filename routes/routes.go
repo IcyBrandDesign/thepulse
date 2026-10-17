@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"gofun/controllers"
-	"gofun/middleware"
+	"thepulse/controllers"
+	"thepulse/middleware"
 
 	"github.com/gin-gonic/gin"
 )
