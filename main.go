@@ -1,8 +1,8 @@
 package main
 
 import (
-	"thepulse/db"
-	"thepulse/routes"
+	"thepulse/backend/db"
+	"thepulse/backend/routes"
 	"os"
 
 	"github.com/gin-gonic/gin"

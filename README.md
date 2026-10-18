@@ -8,3 +8,6 @@ Colorpalette:
 - Cambridge blue: #9EBC9F
 - Tan: #D3B88C
 - White smoke #F4F2F3
+
+# air
+- brukes for live endring uten å måtte slå av og på 
